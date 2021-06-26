@@ -9,6 +9,7 @@ typedef std::unique_ptr<Complex[]> Ptr; // 数组类型
 
 class CMyFFT {
 private:
+    CMyFFT() { };
     static const double PI;
     void doFFT(int, int, Ptr&, Ptr&); /* FFT程序*/
 
