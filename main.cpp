@@ -1,12 +1,13 @@
 #include "CMyFFT.h "
 #include <complex>
+#include <vector>
 using namespace std;
 int main()
 {
     int m = 3;
     int N = int(exp2(m));
-    Ptr x(new Complex[8]);
-    Ptr X(new Complex[8]);
+    vector<Complex>x(N);
+    vector<Complex>X(N);
 
      for (int i = 0; i < N;i++) {
          x[i].real(i);

@@ -2,7 +2,7 @@
 
 const double CMyFFT::PI = 3.141592654;
 
-void CMyFFT::doFFT(int N, int m, Ptr& x, Ptr& X) {
+void CMyFFT::doFFT(int N, int m, std::vector<Complex>& x, std::vector<Complex>& X) {
     if (N != int(exp2(m + 1))) //检查输入参数
     {
         exit(0);
@@ -14,10 +14,10 @@ void CMyFFT::doFFT(int N, int m, Ptr& x, Ptr& X) {
         return;
     }
 
-    Ptr ou(new Complex[N / 2]);
-    Ptr ji(new Complex[N / 2]);
-    Ptr Ak(new Complex[N / 2]);
-    Ptr Bk(new Complex[N / 2]);
+    std::vector<Complex> ou(N / 2);
+    std::vector<Complex> ji(N / 2);
+    std::vector<Complex> Ak(N / 2);
+    std::vector<Complex> Bk(N / 2);
 
     for (int i = 0; i < N; i++) {
         if (i % 2 == 0) {
