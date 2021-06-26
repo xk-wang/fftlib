@@ -1,7 +1,7 @@
 #pragma once
 
 #include <complex>
-#include <math.h>
+#include <cmath>
 #include <memory>
 #include <iostream>
 typedef std::complex<double> Complex;
