@@ -2,7 +2,7 @@
 
 const double CMyFFT::PI = 3.141592654;
 
-void CMyFFT::doFFT(int N, int m, Complex *x, Complex *X) {
+void CMyFFT::doFFT(int N, int m, Ptr& x, Ptr& X) {
     if (N != int(exp2(m + 1))) //检查输入参数
     {
         exit(0);
@@ -14,10 +14,10 @@ void CMyFFT::doFFT(int N, int m, Complex *x, Complex *X) {
         return;
     }
 
-    Complex *ou = new Complex[N / 2];
-    Complex *ji = new Complex[N / 2];
-    Complex *Ak = new Complex[N / 2];
-    Complex *Bk = new Complex[N / 2];
+    Ptr ou(new Complex[N / 2]);
+    Ptr ji(new Complex[N / 2]);
+    Ptr Ak(new Complex[N / 2]);
+    Ptr Bk(new Complex[N / 2]);
 
     for (int i = 0; i < N; i++) {
         if (i % 2 == 0) {
@@ -35,9 +35,4 @@ void CMyFFT::doFFT(int N, int m, Complex *x, Complex *X) {
         X[k] = Ak[k] + tmp;
         X[k + N / 2] = Ak[k] - tmp;
     }
-
-    delete[] ou;
-    delete[] ji;
-    delete[] Ak;
-    delete[] Bk;
 }

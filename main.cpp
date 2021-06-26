@@ -5,8 +5,8 @@ int main()
 {
     int m = 3;
     int N = int(exp2(m));
-    complex<double> x[8];
-    complex<double> X[8];
+    Ptr x(new Complex[8]);
+    Ptr X(new Complex[8]);
 
      for (int i = 0; i < N;i++) {
          x[i].real(i);
