@@ -27,6 +27,12 @@ public:
         return CComplex(c1.m_real + c2.m_real, c1.m_img + c2.m_img);
     }
 
+    CComplex & operator+=(const CComplex &rhs){
+        setReal(m_real+rhs.m_real);
+        setImg(m_img+rhs.m_img);
+        return *this;
+    }
+
     friend CComplex operator-(const CComplex &c1, const CComplex &c2) {
         return CComplex(c1.m_real - c2.m_real, c1.m_img - c2.m_img);
     }
@@ -35,7 +41,7 @@ public:
         double a = c1.m_real;
         double b = c1.m_img;
         double c = c2.m_real;
-        double d = c2.m_img();
+        double d = c2.m_img;
         double _real = a * c - b * d;
         double _img = a * d + b * c;
         return CComplex(_real, _img);
