@@ -11,7 +11,7 @@ int main()
 
      for (int i = 0; i < N;i++) {
          x[i].real(i);
-         x[i].imag(i);
+         x[i].imag(0);
      }
      CMyFFT::FFT(N, m-1, x, X);
 
